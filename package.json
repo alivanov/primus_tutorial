@@ -10,6 +10,7 @@
     "ws": "~0.4.32",
     "engine.io": "~1.4.1",
     "coffee-script": "~1.8.0",
-    "node-static": "~0.7.6"
+    "node-static": "~0.7.6",
+    "lstream": "0.0.4"
   }
 }

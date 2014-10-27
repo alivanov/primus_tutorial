@@ -10,15 +10,13 @@
     </p>
     <script src="primus/primus.js"></script>
     <script>
-        var primus = new Primus('http://127.0.0.1:3000/?query=string');
-        primus.write('you can write directly, we will queue it');
-        primus.write('until the open event is called and flush it');
+        //connect to current URL
+        var primus = Primus.connect();
         primus.on('reconnect', function () {
             console.log('primus: reconnect event happend');
         });
         primus.on('open', function () {
             console.log('primus: connection established');
-            primus.write('hello world');
         });
         primus.on('error', function (err) {
             console.log('primus: error event', err);
