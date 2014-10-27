@@ -1,0 +1,15 @@
+{
+  "name": "primus_test",
+  "description": "primus test",
+  "version": "1.0.0",
+  "private": false,
+  "author": "alivanov",
+  "dependencies": {
+    "sockjs": "~0.3.10",
+    "primus": "~2.4.10",
+    "ws": "~0.4.32",
+    "engine.io": "~1.4.1",
+    "coffee-script": "~1.8.0",
+    "node-static": "~0.7.6"
+  }
+}

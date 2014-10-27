@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Primus</title>
+</head>
+<body>
+    <p>
+        Welcome to Primus example.
+    </p>
+    <script src="primus/primus.js"></script>
+    <script>
+        var primus = new Primus('http://127.0.0.1:3000/?query=string');
+        primus.write('you can write directly, we will queue it');
+        primus.write('until the open event is called and flush it');
+        primus.on('reconnect', function () {
+            console.log('primus: reconnect event happend');
+        });
+        primus.on('open', function () {
+            console.log('primus: connection established');
+            primus.write('hello world');
+        });
+        primus.on('error', function (err) {
+            console.log('primus: error event', err);
+        });
+        primus.on('data', function (data) {
+            console.log('primus: received data', data);
+        });
+        primus.on('end', function () {
+            console.log('primus: connection closed');
+        });
+    </script>
+</body>
+</html>
