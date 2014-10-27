@@ -18,7 +18,7 @@ server = http.createServer( (req, res) ->
 primus = new Primus server, transformer: 'websockets'
 
 primus.on 'connection', (socket) ->
-  socket.on 'date', (message) ->
+  socket.on 'data', (message) ->
     console.log 'received a message', message
     socket.write ping: 'pong'
 
